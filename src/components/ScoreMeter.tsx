@@ -58,7 +58,7 @@ export default function ScoreMeter({ score }: ScoreMeterProps) {
             cy="100"
             r={radius}
             fill="none"
-            stroke="rgba(139, 92, 246, 0.2)"
+            stroke="rgba(212, 175, 55, 0.2)"
             strokeWidth="12"
           />
           {/* スコア円 */}
@@ -80,7 +80,7 @@ export default function ScoreMeter({ score }: ScoreMeterProps) {
           <span className="text-5xl font-bold" style={{ color }}>
             {animatedScore}
           </span>
-          <span className="text-lg text-[#A0A0C0]">/ 100点</span>
+          <span className="text-lg text-gray-500">/ 100点</span>
         </div>
       </div>
       <div

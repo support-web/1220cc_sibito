@@ -38,7 +38,7 @@ export default function InputForm({ onSubmit, isLoading }: InputFormProps) {
 
       {/* ニックネーム */}
       <div className="mb-6">
-        <label className="block text-sm text-[#A0A0C0] mb-2">
+        <label className="block text-sm text-gray-600 mb-2">
           ニックネーム（任意・PDF出力用）
         </label>
         <input
@@ -53,7 +53,7 @@ export default function InputForm({ onSubmit, isLoading }: InputFormProps) {
 
       {/* 暦法選択 */}
       <div className="mb-6">
-        <label className="block text-sm text-[#A0A0C0] mb-2">暦法</label>
+        <label className="block text-sm text-gray-600 mb-2">暦法</label>
         <div className="fortune-radio flex-wrap">
           <label>
             <input
@@ -80,7 +80,7 @@ export default function InputForm({ onSubmit, isLoading }: InputFormProps) {
 
       {/* 生年月日 */}
       <div className="mb-6">
-        <label className="block text-sm text-[#A0A0C0] mb-2">生年月日</label>
+        <label className="block text-sm text-gray-600 mb-2">生年月日</label>
         <div className="grid grid-cols-3 gap-4">
           <select
             className="fortune-select"
@@ -120,7 +120,7 @@ export default function InputForm({ onSubmit, isLoading }: InputFormProps) {
 
       {/* 出生時刻 */}
       <div className="mb-6">
-        <label className="block text-sm text-[#A0A0C0] mb-2">出生時刻（時辰）</label>
+        <label className="block text-sm text-gray-600 mb-2">出生時刻（時辰）</label>
         <select
           className="fortune-select w-full"
           value={formData.birthHour}
@@ -133,14 +133,14 @@ export default function InputForm({ onSubmit, isLoading }: InputFormProps) {
             </option>
           ))}
         </select>
-        <p className="text-xs text-[#A0A0C0] mt-2">
+        <p className="text-xs text-gray-500 mt-2">
           ※ 不明の場合は午時（11:00〜12:59）で計算します
         </p>
       </div>
 
       {/* 性別 */}
       <div className="mb-8">
-        <label className="block text-sm text-[#A0A0C0] mb-2">性別</label>
+        <label className="block text-sm text-gray-600 mb-2">性別</label>
         <div className="fortune-radio">
           <label>
             <input

@@ -36,7 +36,7 @@ export default function FortuneGraph({ yearlyFortune }: FortuneGraphProps) {
           <p className="text-2xl font-bold mt-2" style={{ color: getScoreColor(data.score) }}>
             {data.score}点
           </p>
-          <p className="text-[#A0A0C0] mt-2 max-w-xs">{data.description}</p>
+          <p className="text-gray-600 mt-2 max-w-xs">{data.description}</p>
         </div>
       );
     }
@@ -79,20 +79,20 @@ export default function FortuneGraph({ yearlyFortune }: FortuneGraphProps) {
           >
             <defs>
               <linearGradient id="colorScore" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#8B5CF6" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#8B5CF6" stopOpacity={0.1} />
+                <stop offset="5%" stopColor="#D4AF37" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#D4AF37" stopOpacity={0.1} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(139, 92, 246, 0.2)" />
+            <CartesianGrid strokeDasharray="3 3" stroke="rgba(212, 175, 55, 0.2)" />
             <XAxis
               dataKey="year"
-              stroke="#A0A0C0"
-              tick={{ fill: '#A0A0C0', fontSize: 12 }}
+              stroke="#6B7280"
+              tick={{ fill: '#6B7280', fontSize: 12 }}
             />
             <YAxis
               domain={[0, 100]}
-              stroke="#A0A0C0"
-              tick={{ fill: '#A0A0C0', fontSize: 12 }}
+              stroke="#6B7280"
+              tick={{ fill: '#6B7280', fontSize: 12 }}
               ticks={[0, 20, 40, 60, 80, 100]}
             />
             <Tooltip content={<CustomTooltip />} />
@@ -101,7 +101,7 @@ export default function FortuneGraph({ yearlyFortune }: FortuneGraphProps) {
             <Area
               type="monotone"
               dataKey="score"
-              stroke="#8B5CF6"
+              stroke="#D4AF37"
               strokeWidth={3}
               fillOpacity={1}
               fill="url(#colorScore)"
@@ -132,11 +132,11 @@ export default function FortuneGraph({ yearlyFortune }: FortuneGraphProps) {
             key={fortune.year}
             className={`p-3 rounded-lg text-center ${
               fortune.year === currentYear
-                ? 'bg-purple-500/30 border border-purple-500'
-                : 'bg-white/5'
+                ? 'bg-[#D4AF37]/20 border border-[#D4AF37]'
+                : 'bg-gray-50'
             }`}
           >
-            <div className="text-sm text-[#A0A0C0]">{fortune.year}年</div>
+            <div className="text-sm text-gray-600">{fortune.year}年</div>
             <div
               className="text-xl font-bold"
               style={{ color: getScoreColor(fortune.score) }}

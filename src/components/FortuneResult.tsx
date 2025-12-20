@@ -26,13 +26,13 @@ export default function FortuneResult({
   return (
     <div className="max-w-4xl mx-auto space-y-8 animate-fade-in-up">
       {/* LINE誘導バナー（上部） */}
-      <div className="fortune-card p-4 bg-gradient-to-r from-green-500/20 to-green-600/20 border-green-500/50">
+      <div className="fortune-card p-4 bg-gradient-to-r from-green-50 to-green-100 border-green-300">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
-            <p className="font-bold text-green-400">LINE登録で詳細鑑定プレゼント！</p>
-            <p className="text-sm text-[#A0A0C0]">毎月の金運情報も無料で配信中</p>
+            <p className="font-bold text-green-700">LINE登録で詳細鑑定プレゼント！</p>
+            <p className="text-sm text-green-600">毎月の金運情報も無料で配信中</p>
           </div>
-          <button className="px-6 py-2 bg-green-500 hover:bg-green-600 rounded-full font-bold transition-colors">
+          <button className="px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded-full font-bold transition-colors">
             今すぐ登録 →
           </button>
         </div>
@@ -43,14 +43,14 @@ export default function FortuneResult({
         <h2 className="text-2xl md:text-3xl font-bold mb-2 gradient-text">
           {nickname ? `${nickname}さんの` : 'あなたの'}金運鑑定結果
         </h2>
-        <p className="text-[#A0A0C0] mb-8">紫微斗数による金運総合評価</p>
+        <p className="text-gray-600 mb-8">紫微斗数による金運総合評価</p>
 
         <div className="flex justify-center mb-8">
           <ScoreMeter score={fortuneResult.score} />
         </div>
 
-        <div className="inline-block px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500">
-          <span className="text-lg">あなたの金運タイプ: </span>
+        <div className="inline-block px-6 py-3 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]">
+          <span className="text-lg text-gray-700">あなたの金運タイプ: </span>
           <span className="text-xl font-bold gold-text">{fortuneResult.fortuneType}</span>
         </div>
       </div>
@@ -60,20 +60,20 @@ export default function FortuneResult({
         <h3 className="text-xl font-bold mb-4 gradient-text">
           {fortuneResult.fortuneType}とは？
         </h3>
-        <p className="text-[#A0A0C0] mb-4">{fortuneTypeInfo.description}</p>
+        <p className="text-gray-600 mb-4">{fortuneTypeInfo.description}</p>
 
         <div className="grid md:grid-cols-2 gap-4 mt-6">
-          <div className="bg-white/5 rounded-lg p-4">
-            <h4 className="font-bold text-purple-400 mb-2">成功パターン</h4>
-            <p className="text-sm text-[#A0A0C0]">{fortuneTypeInfo.successPattern}</p>
+          <div className="bg-[#D4AF37]/5 rounded-lg p-4 border border-[#D4AF37]/20">
+            <h4 className="font-bold text-[#996515] mb-2">成功パターン</h4>
+            <p className="text-sm text-gray-600">{fortuneTypeInfo.successPattern}</p>
           </div>
-          <div className="bg-white/5 rounded-lg p-4">
-            <h4 className="font-bold text-cyan-400 mb-2">向いている職業</h4>
+          <div className="bg-[#D4AF37]/5 rounded-lg p-4 border border-[#D4AF37]/20">
+            <h4 className="font-bold text-[#996515] mb-2">向いている職業</h4>
             <div className="flex flex-wrap gap-2">
               {fortuneTypeInfo.jobs.map((job, idx) => (
                 <span
                   key={idx}
-                  className="px-2 py-1 bg-cyan-500/20 rounded text-sm text-cyan-300"
+                  className="px-2 py-1 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded text-sm text-[#996515]"
                 >
                   {job}
                 </span>
@@ -86,7 +86,7 @@ export default function FortuneResult({
       {/* 財帛宮解説 */}
       <div className="fortune-card p-6">
         <h3 className="text-xl font-bold mb-4 gradient-text">財帛宮からみる金運</h3>
-        <div className="whitespace-pre-line text-[#A0A0C0]">
+        <div className="whitespace-pre-line text-gray-600">
           {fortuneResult.description.caibogong}
         </div>
       </div>
@@ -95,11 +95,11 @@ export default function FortuneResult({
       <div className="fortune-card p-6">
         <h3 className="text-xl font-bold mb-4 gradient-text">成功パターン分析</h3>
         <div className="flex items-center gap-3 mb-4">
-          <span className="px-4 py-2 rounded-full bg-yellow-500/20 border border-yellow-500 font-bold gold-text">
+          <span className="px-4 py-2 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37] font-bold gold-text">
             {fortuneResult.successPattern}
           </span>
         </div>
-        <div className="whitespace-pre-line text-[#A0A0C0]">
+        <div className="whitespace-pre-line text-gray-600">
           {fortuneResult.description.successPatternDesc}
         </div>
       </div>
@@ -111,22 +111,22 @@ export default function FortuneResult({
           {fortuneResult.jobRecommendations.map((job, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-4 p-3 bg-white/5 rounded-lg"
+              className="flex items-center gap-4 p-3 bg-[#D4AF37]/5 rounded-lg border border-[#D4AF37]/20"
             >
               <span
                 className={`w-8 h-8 flex items-center justify-center rounded-full font-bold ${
                   idx === 0
-                    ? 'bg-yellow-500 text-black'
+                    ? 'bg-[#D4AF37] text-white'
                     : idx === 1
-                    ? 'bg-gray-400 text-black'
+                    ? 'bg-gray-400 text-white'
                     : idx === 2
                     ? 'bg-amber-700 text-white'
-                    : 'bg-purple-500/50 text-white'
+                    : 'bg-[#D4AF37]/30 text-[#996515]'
                 }`}
               >
                 {idx + 1}
               </span>
-              <span className="text-lg">{job}</span>
+              <span className="text-lg text-gray-800">{job}</span>
             </div>
           ))}
         </div>
@@ -143,8 +143,8 @@ export default function FortuneResult({
         <h3 className="text-xl font-bold mb-4 gradient-text">
           {new Date().getFullYear()}年の金運アドバイス
         </h3>
-        <div className="p-4 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-lg">
-          <p className="text-lg">{fortuneResult.yearlyFortune[0]?.description}</p>
+        <div className="p-4 bg-gradient-to-r from-[#D4AF37]/10 to-[#D4AF37]/5 rounded-lg border border-[#D4AF37]/20">
+          <p className="text-lg text-gray-700">{fortuneResult.yearlyFortune[0]?.description}</p>
         </div>
       </div>
 
@@ -161,7 +161,7 @@ export default function FortuneResult({
         </button>
         <button
           onClick={onReset}
-          className="px-8 py-4 rounded-xl border-2 border-purple-500 text-purple-400 hover:bg-purple-500/20 transition-colors font-bold"
+          className="px-8 py-4 rounded-xl border-2 border-[#D4AF37] text-[#996515] hover:bg-[#D4AF37]/10 transition-colors font-bold"
         >
           もう一度鑑定する
         </button>
@@ -172,20 +172,20 @@ export default function FortuneResult({
         <h3 className="text-2xl font-bold mb-4 gradient-text">
           もっと詳しい鑑定を受けたい方へ
         </h3>
-        <p className="text-[#A0A0C0] mb-6">
+        <p className="text-gray-600 mb-6">
           LINE公式アカウントでは、毎月の金運情報や<br />
           限定の開運アドバイスを無料でお届けしています
         </p>
 
-        <div className="inline-block p-6 bg-white rounded-lg mb-6">
+        <div className="inline-block p-6 bg-gray-50 rounded-lg mb-6 border border-gray-200">
           {/* QRコードのプレースホルダー */}
           <div className="w-32 h-32 bg-gray-200 flex items-center justify-center text-gray-500 text-sm">
             QRコード
           </div>
         </div>
 
-        <div className="space-y-2 text-sm text-[#A0A0C0]">
-          <p>【LINE特典】</p>
+        <div className="space-y-2 text-sm text-gray-600">
+          <p className="font-bold text-gray-700">【LINE特典】</p>
           <ul className="inline-block text-left">
             <li>✓ 毎月の金運カレンダー</li>
             <li>✓ ラッキーカラー・ラッキーアイテム</li>
@@ -194,13 +194,13 @@ export default function FortuneResult({
           </ul>
         </div>
 
-        <button className="mt-6 px-8 py-4 bg-green-500 hover:bg-green-600 rounded-full font-bold text-lg transition-colors">
+        <button className="mt-6 px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-full font-bold text-lg transition-colors">
           LINE友達追加する
         </button>
       </div>
 
       {/* 免責事項 */}
-      <div className="text-center text-xs text-[#A0A0C0] p-4">
+      <div className="text-center text-xs text-gray-500 p-4">
         <p>
           ※ 本鑑定は紫微斗数に基づく占い結果であり、娯楽目的としてご利用ください。
           <br />

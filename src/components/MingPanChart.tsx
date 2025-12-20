@@ -40,10 +40,10 @@ export default function MingPanChart({ mingPan }: MingPanChartProps) {
     return (
       <div key={zhi} className={cellClass}>
         {/* 宮位名 */}
-        <div className="text-[10px] text-[#A0A0C0] mb-1">
+        <div className="text-[10px] text-gray-600 mb-1">
           {palace.name}
-          {isMingGong && <span className="text-purple-400">★</span>}
-          {isShenGong && <span className="text-cyan-400">☆</span>}
+          {isMingGong && <span className="text-[#D4AF37]">★</span>}
+          {isShenGong && <span className="text-[#996515]">☆</span>}
         </div>
 
         {/* 地支 */}
@@ -54,7 +54,7 @@ export default function MingPanChart({ mingPan }: MingPanChartProps) {
           {palace.mainStars.map((star, idx) => (
             <span
               key={idx}
-              className="text-[10px] px-1 py-0.5 bg-purple-900/50 rounded text-purple-200"
+              className="text-[10px] px-1 py-0.5 bg-[#D4AF37]/20 rounded text-[#996515]"
             >
               {star}
             </span>
@@ -85,7 +85,7 @@ export default function MingPanChart({ mingPan }: MingPanChartProps) {
           {palace.auxiliaryStars.slice(0, 3).map((star, idx) => (
             <span
               key={idx}
-              className="text-[8px] text-[#A0A0C0]"
+              className="text-[8px] text-gray-500"
             >
               {star}
             </span>
@@ -115,18 +115,18 @@ export default function MingPanChart({ mingPan }: MingPanChartProps) {
       </h3>
 
       {/* 基本情報 */}
-      <div className="flex justify-center gap-4 mb-4 text-sm text-[#A0A0C0]">
-        <span>五行局: <span className="text-yellow-500">{mingPan.wuXingJu}</span></span>
-        <span>年干支: <span className="text-purple-400">{mingPan.yearGanZhi.gan}{mingPan.yearGanZhi.zhi}</span></span>
+      <div className="flex justify-center gap-4 mb-4 text-sm text-gray-600">
+        <span>五行局: <span className="text-[#D4AF37]">{mingPan.wuXingJu}</span></span>
+        <span>年干支: <span className="text-[#996515]">{mingPan.yearGanZhi.gan}{mingPan.yearGanZhi.zhi}</span></span>
       </div>
 
-      <div className="flex justify-center gap-4 mb-4 text-xs">
+      <div className="flex justify-center gap-4 mb-4 text-xs text-gray-600">
         <span className="flex items-center gap-1">
-          <span className="w-3 h-3 bg-purple-500/30 border border-purple-500 rounded"></span>
+          <span className="w-3 h-3 bg-[#D4AF37]/30 border border-[#D4AF37] rounded"></span>
           命宮
         </span>
         <span className="flex items-center gap-1">
-          <span className="w-3 h-3 bg-yellow-500/20 border border-yellow-500 rounded"></span>
+          <span className="w-3 h-3 bg-[#D4AF37]/10 border border-[#D4AF37]/50 rounded"></span>
           金運関連宮
         </span>
       </div>
@@ -145,9 +145,9 @@ export default function MingPanChart({ mingPan }: MingPanChartProps) {
             >
               {idx === 5 && (
                 <div className="text-center">
-                  <div className="text-xs text-[#A0A0C0]">命主</div>
+                  <div className="text-xs text-gray-600">命主</div>
                   <div className="text-lg gold-text font-bold">{mingPan.yearGanZhi.gan}{mingPan.yearGanZhi.zhi}年生</div>
-                  <div className="text-xs text-[#A0A0C0] mt-1">
+                  <div className="text-xs text-gray-600 mt-1">
                     農暦 {mingPan.lunarDate.month}月{mingPan.lunarDate.day}日
                   </div>
                 </div>
